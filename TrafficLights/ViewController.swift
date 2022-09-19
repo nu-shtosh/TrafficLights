@@ -30,9 +30,9 @@ class ViewController: UIViewController {
 
         startButton.layer.cornerRadius = 10
 
-        redLightView.layer.cornerRadius = 50
-        yellowLightView.layer.cornerRadius = 50
-        greenLightView.layer.cornerRadius = 50
+        redLightView.layer.cornerRadius = redLightView.frame.width / 2
+        yellowLightView.layer.cornerRadius = yellowLightView.frame.width / 2
+        greenLightView.layer.cornerRadius = greenLightView.frame.width / 2
 
         greenLightView.alpha = lightOff
         redLightView.alpha = lightOff
@@ -45,16 +45,13 @@ class ViewController: UIViewController {
         switch currentLight {
         case .red:
             redLightView.alpha = lightOn
-            yellowLightView.alpha = lightOff
             greenLightView.alpha = lightOff
             currentLight = .yellow
         case .yellow:
             redLightView.alpha = lightOff
             yellowLightView.alpha = lightOn
-            greenLightView.alpha = lightOff
             currentLight = .green
         case .green:
-            redLightView.alpha = lightOff
             yellowLightView.alpha = lightOff
             greenLightView.alpha = lightOn
             currentLight = .red
